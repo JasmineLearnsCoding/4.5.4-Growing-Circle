@@ -1,0 +1,25 @@
+// Write a program that uses key events to make a circle larger and smaller
+
+//Constants
+var RADIUS = 10;
+var circle;
+
+function start(){
+    //Adds the initial circle to the page
+    circle = new Circle(RADIUS);
+    circle.setPosition(getWidth()/2, getHeight()/2);
+    circle.setColor("#32cdca");
+    add(circle);
+    
+    keyDownMethod(keyDown);
+}
+
+//Grows or shrinks the circle when the left or right arrows are pressed
+function keyDown(e){
+    if(e.keyCode == Keyboard.LEFT){
+    circle.setRadius(RADIUS -=10);
+    }
+    if(e.keyCode == Keyboard.RIGHT){
+    circle.setRadius(RADIUS +=10);
+    }
+}
